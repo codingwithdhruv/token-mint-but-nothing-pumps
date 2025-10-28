@@ -1,21 +1,20 @@
-***
-
 # Token Mint But Nothing Pumps
 
-A simple, no-nonsense TypeScript project to create SPL tokens on the Solana devnet. Perfect for launching your next "totally serious" blockchain token with zero promises and all the sarcasm.
+A simple, no-nonsense TypeScript project to mint and distribute SPL tokens on Solana devnet. Perfect for launching your next “totally serious” or highly sarcastic token with all the on-chain bravado and none of the expectations.
 
 ## Features
 
-- Creates a new SPL token mint on Solana devnet with 6 decimals
-- Uses TypeScript for type safety and clarity
-- Loads wallet from environment variables for security
-- Logs transaction results and errors clearly
+- Initializes or finds your Associated Token Account (ATA)
+- Mints tokens straight into your own wallet’s token account
+- Fully written in TypeScript for type safety and clean code
+- Loads wallet from `.env` for secure, flexible configuration
+- Prints all important addresses and transaction IDs for your meme gallery
 
 ## Prerequisites
 
 - Node.js (v16+)
 - npm or yarn
-- A Solana wallet private key (Devnet recommended)
+- Solana wallet private key (Devnet ONLY—don’t blame this script for mainnet losses)
 
 ## Installation
 
@@ -27,17 +26,17 @@ npm install
 
 ## Configuration
 
-Create a `.env` file in the project root and add your wallet private key array:
+Create a `.env` file in your project root with your wallet’s private key (as an array):
 
 ```env
 WALLET=[123,45,67,89,...]
 ```
 
-**Never commit this file or share your key. Use test wallets only.**
+**Important:** never commit `.env` or use a mainnet wallet. This project is for devnet, memes, and chaos.
 
 ## Usage
 
-Transpile and run the mint script:
+Transpile TypeScript and run:
 
 ```bash
 npx tsc
@@ -53,24 +52,44 @@ npx ts-node init.ts
 ## What It Does
 
 - Connects to Solana devnet
-- Loads wallet from `.env`
-- Mints a brand-new SPL token mint with 6 decimals
-- Prints the mint address after success
+- Loads your wallet from environment variables
+- Finds or creates your SPL token account (ATA)
+- Mints 9,999,999 shiny new tokens right into your account
+- Prints all key addresses and the mint transaction hash
+
+## Mint Details (Demo)
+
+- **Token Mint Address:** `4e1rEB1HqPSWXm7prkU6Ufb8dV89UEofXYKFMSutaktS`
+- **Owner Solana Address:** `EwU9CG19f5nKbf5ykk9sQZs87fdaJB5T54CKQ2K67xhA`
+- **Associated Token Account:** `1b4q3FN1ZH9mr7yqZKdQvf6n6y7bVRCZPLdUMky9h1d`
+- **Mint Transaction Hash:**  
+  `4tbJfi88eFTK4eW8nak8fRYj5zztAwyZp3LoRW5shW9n7V1tdesYc4jvwTL9rC7TRs24ENawu5wbiPC4HNss5Gaj`
+
+## Example Output
+
+```
+Your ata is 1b4q3FN1ZH9mr7yqZKdQvf6n6y7bVRCZPLdUMky9h1d
+Your mint txid: 4tbJfi88eFTK4eW8nak8fRYj5zztAwyZp3LoRW5shW9n7V1tdesYc4jvwTL9rC7TRs24ENawu5wbiPC4HNss5Gaj
+```
+
+## Screenshot
+
+![Minting Script Output](./Screenshot%20of%20hash%20mint.png)
 
 ## Project Structure
 
 ```
 token-mint-but-nothing-pumps/
-├── init.ts          # Main TypeScript mint script
-├── init.js          # Transpiled JavaScript output
-├── tsconfig.json    # TS compiler config
-├── .env             # Wallet private key (ignored by git)
-└── README.md        # This file
+├── init.ts          # Mint & token distribution script
+├── init.js          # JS output (from tsc)
+├── tsconfig.json    # TypeScript config
+├── .env             # Your private key (git ignored)
+├── README.md        # This file
+└── Screenshot-2025-10-27-at-12.47.46-PM.jpg # Output screenshot
 ```
-
 
 ## Disclaimer
 
-Only for learning and testing. This will not make your token moon. Use at your own risk.
+Only for learning, devnet fun, and pure blockchain comedy. No promises, no moon, no rug pulls—just bytes and sarcasm.
 
 ***
